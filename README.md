@@ -2,7 +2,7 @@
 
 
 ### Meios de comunicação: 
-<a href="https://www.linkedin.com/in/gustavo-teodoro-55917b282/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <a href = "mailto:tteodoro.gustavo@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor" target="_blank"></a>
+<a href="https://www.linkedin.com/in/gustavo-teodoro-55917b282/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <a href = "mailto:gustavo.teodoro1@estudante.ufla.br"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor" target="_blank"></a>
 
 [![Status](https://img.shields.io/badge/Status-Concluído-brightgreen.svg)](https://github.com/tteodorogustavo/zetta-lab)
 [![Tecnologias](https://img.shields.io/badge/Tecnologias-Python%2C%20Pandas%2C%20Matplotlib%2C%20Seaborn-blue%2C%20YData.svg)]()
@@ -47,6 +47,12 @@ A **clareza na escolha e aquisição dos dados** é um critério fundamental do 
 | ![IBGE Logo](https://yt3.googleusercontent.com/YpugDbm1u5i9jlRDR-QGLMUQSdHKEuW83OOpbONWbsuVm1f7rhq4ejFUUDKFaRJ2KozZboAF=s160-c-k-c0x00ffffff-no-rj) | ![INEP Logo](https://yt3.ggpht.com/R9dq_khXuqjNk6228ccXxQcDBuLksxgKun55EdSFyz3bDufCpwY7NnquoGhTKshlsOAy6meuW30=s176-c-k-c0x00ffffff-no-rj-mo) | ![SNIS Logo](https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/arquivos/fc42fcb1b5544dbbad354bd6bae8734a.png) |
 | **Censo Demográfico 2022** | **Indicadores Educacionais** | **Sistema Nacional de Informações sobre Saneamento** |
 | [Acessar Dados](https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html) | [Acessar Dados](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais) | [Acessar Dados](http://www.snis.gov.br/painel-informacoes-saneamento-brasil) |
+
+
+| Portal Dos Dados Abertos | Base dos Dados |
+|:---:|:---:|
+|![Portal dos Dados Abertos](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR2g5kSq2iof-C0RTAK3ah0fbAcI3cGSNNLQ&s) | ![Base Dos Dados](https://avatars.githubusercontent.com/u/71097635?s=200&v=4) |
+| [Acessar site](https://basedosdados.org/) | [Acessar site](https://dados.gov.br/) |
 
 
 ##  4. Processamento e Limpeza de Dados
@@ -175,6 +181,8 @@ Estes gráficos de barras ordenados facilitam a comparação direta do desempenh
 
 Apesar de que os dados não deixarem claros essa correlação, ainda sim é possível que esses fatores socioeconômicos influenciem diretamente a vida de milhares de adolecentes por todo país. Além disso, há diversos outros fatores e agentes que podem nos indicar e evidenciar ponto cruciais sobre políticas públicas necessárias para combater a desigualdade e proporcionar condições de equididade no ensino brasileiro.
 
+Ademais, base de dados grandes como essa poderiam ter maior potencial em caso de aplicação de algumas técnicas de mineração de dados para seleção de atributos, sumarização dos dados e diversos outros fatores, mas devido ao tempo escasso optei por fazer uma simples análise com a biblioteca YData e também a limpeza através da biblioteca Pandas.
+
 ---
 
 ## 7. Estrutura do Repositório
@@ -214,3 +222,23 @@ A **organização do repositório** é um critério de avaliação. A estrutura 
 Este projeto foi desenvolvido como parte do **Desafio de Ciência e Governança de Dados**, com o objetivo de explorar a relação entre fatores socioeconômicos e o desempenho escolar de jovens brasileiros.
 
 O foco central é a fase de **Visualização de Insights**, onde dados de **Deslocamento** e **Saneamento Básico** foram cruzados com **Índices de Ensino** (Evasão e Repetência) para identificar correlações e padrões a nível estadual (UF).
+
+## 8. Requisitos e Reprodutibilidade
+
+Para garantir a reprodutibilidade deste projeto, é necessário ter o Python 3.9+ e as seguintes bibliotecas instaladas:
+
+```
+pandas
+numpy
+ydata-profiling
+pyarrow
+openpyxl
+seaborn
+matplotlib
+```
+
+É possível instalar todas as dependências executando o seguinte comando:
+
+```bash
+pip install -r requirements.txt
+```
