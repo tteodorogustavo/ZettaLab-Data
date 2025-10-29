@@ -9,6 +9,32 @@
 [![Notebooks](https://img.shields.io/badge/Notebooks-3%20Arquivos-orange.svg)](./notebooks/)
 
 
+## Tecnologias e Bibliotecas Utilizadas
+
+<div align="center">
+
+### Linguagem e Ambiente
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="60" height="60"/> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter" width="60" height="60"/>
+
+### Manipulação e Análise de Dados
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg" alt="Pandas" width="60" height="60"/> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="NumPy" width="60" height="60"/>
+<img src="https://avatars.githubusercontent.com/u/57689451?s=280&v=4" alt="YData Profiling" width="60" height="60"/>
+
+### Visualização de Dados
+<img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" width="60" height="60"/> 
+<img src="https://media.licdn.com/dms/image/v2/D4D12AQFq38cGkv_oHQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1679493396295?e=2147483647&v=beta&t=8hBosvau_9_t0Nt46DZ89TxWOgFZg_z47cMFn8o5cmM" alt="Matplotlib" width="60" height="60"/> 
+
+
+### Outras Ferramentas
+<img src="https://user-images.githubusercontent.com/25181517/192108891-d86b6220-e232-423a-bf5f-90903e6887c3.png" alt="VS Code" width="60" height="60"/> 
+<img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" width="60" height="60"/> 
+
+**Python** • **Pandas** • **NumPy** • **Matplotlib** • **Seaborn** • **YData Profiling** • **Jupyter Notebook**
+
+</div>
+
 ---
 
 ## 1. Introdução e Objetivo do Projeto
@@ -179,7 +205,7 @@ Estes gráficos de barras ordenados facilitam a comparação direta do desempenh
 
 ## 6. Conclusão e Recomendações
 
-Apesar de que os dados não deixarem claros essa correlação, ainda sim é possível que esses fatores socioeconômicos influenciem diretamente a vida de milhares de adolecentes por todo país. Além disso, há diversos outros fatores e agentes que podem nos indicar e evidenciar ponto cruciais sobre políticas públicas necessárias para combater a desigualdade e proporcionar condições de equididade no ensino brasileiro.
+Apesar de que os dados não deixarem claro essa correlação, ainda sim é possível que esses fatores socioeconômicos influenciem diretamente a vida de milhares de adolecentes por todo país. Além disso, há diversos outros fatores e agentes que podem nos indicar e evidenciar ponto cruciais sobre políticas públicas necessárias para combater a desigualdade e proporcionar condições de equididade no ensino brasileiro.
 
 Ademais, base de dados grandes como essa poderiam ter maior potencial em caso de aplicação de algumas técnicas de mineração de dados para seleção de atributos, sumarização dos dados e diversos outros fatores, mas devido ao tempo escasso optei por fazer uma simples análise com a biblioteca YData e também a limpeza através da biblioteca Pandas.
 
@@ -242,3 +268,19 @@ matplotlib
 ```bash
 pip install -r requirements.txt
 ```
+
+---
+
+Feito por mim:
+<table>
+    <tr>
+        <td align="center">
+            <a href="https://github.com/tteodorogustavo">
+                <img src="https://github.com/tteodorogustavo.png" width="100px;" alt="Foto do Gustavo Teodoro"/><br>
+                <sub>
+                    <b>Gustavo Teodoro</b>
+                </sub>
+            </a>
+        </td>
+    </tr>
+</table>
