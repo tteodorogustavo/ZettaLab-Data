@@ -12,27 +12,30 @@ dashboard/
 ├── config.py                 # Configurações e constantes
 ├── pages/
 │   ├── 1_inicio.py          # KPIs e visão geral
-│   ├── 2_analise_estados.py # Análise por estado
+│   ├── 2_analise_estados.py # Análise por estado + mapa pequeno
 │   ├── 3_predicoes.py       # Predições futuras
 │   ├── 4_shap_analysis.py   # Interpretabilidade
-│   └── 5_conclusoes.py      # Storytelling de dados
-├── requirements_dashboard.txt
+│   ├── 5_conclusoes.py      # Storytelling de dados
+│   └── 6_mapa_brasil.py     # Mapa interativo do Brasil
+├── utils/
+│   └── mapa_helper.py       # Funções auxiliares para mapas Folium
 └── README.md                 # Este arquivo
 ```
 
 ## 🚀 Como Executar
 
-### 1. Instalar dependências
+### 1. Instalar dependências (na raiz do projeto)
 
 ```bash
-cd dashboard/
-pip install -r requirements_dashboard.txt
+# Na raiz do projeto
+pip install -r requirements.txt
 ```
 
 ### 2. Rodar o dashboard
 
 ```bash
-streamlit run app.py
+# A partir da raiz do projeto
+streamlit run dashboard/app.py
 ```
 
 O dashboard será aberto em `http://localhost:8501`
@@ -48,6 +51,7 @@ O dashboard será aberto em `http://localhost:8501`
 
 ### 2️⃣ **Análise de Estados**
 - Selecionar estado específico
+- **Mapa pequeno** com localização espacial do estado
 - Série temporal de abandono
 - Indicadores socioeconômicos
 - Comparação com média Brasil
@@ -71,6 +75,18 @@ O dashboard será aberto em `http://localhost:8501`
 - Validação temporal
 - Capacidade preditiva
 - Limitações e próximas investigações
+
+### 6️⃣ **Mapa do Brasil** ⭐ NOVO
+- **Visualização interativa do Brasil** com todos os 27 estados
+- **Slider temporal**: Explore dados de 2018-2022
+- **Cores por risco**: Verde (Baixo) → Amarelo (Médio) → Vermelho (Alto)
+- **Interatividade**: 
+  - Passe o mouse para ver taxa de abandono
+  - Clique para detalhes completos
+  - Zoom e pan para exploração
+- **Estatísticas**: Taxa média, mínima e máxima por ano
+- **Tabela detalhada**: Todos os estados ordenados por risco
+- **Análise temporal**: Evolução 2018-2022 com tendências
 
 ## 🔧 Configurações
 
@@ -108,9 +124,22 @@ CORES_RISCO = {
 
 - **Frontend**: Streamlit
 - **Visualizações**: Plotly
+- **Mapas**: Folium + Streamlit-Folium
+- **Dados Geográficos**: GeoPandas, GeoJSON
 - **ML**: XGBoost
 - **Dados**: Pandas, NumPy
 - **Interpretabilidade**: SHAP
+
+## 🗺️ Dados Geográficos
+
+- **GeoJSON**: `../data/geojson/brasil_estados.geojson`
+- **Formato**: 27 estados do Brasil em formato GeoJSON
+- **Source**: Baixado de repositório público e salvo localmente
+- **Funcionalidades**: 
+  - Colorização por tema (risco)
+  - Tooltips interativas
+  - Popups com detalhes
+  - Zoom e pan interativo
 
 ## 📝 Notas Importantes
 

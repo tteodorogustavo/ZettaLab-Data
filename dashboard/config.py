@@ -54,3 +54,10 @@ FEATURE_NAMES = {
     'Taxa_Abandono_Media': 'Taxa de Abandono Escolar (%)',
     'Taxa_Reprovacao_Media': 'Taxa de Reprovação (%)'
 }
+
+# Configurações de Mapa
+GEOJSON_PATH = '../data/geojson/brasil_estados.geojson'
+MAPA_BRASIL_CENTER = [-10.3910, -51.9253]  # Centro do Brasil
+MAPA_ZOOM_INICIAL = 4
+MAPA_ALTURA_GRANDE = '600px'
+MAPA_ALTURA_PEQUENO = '300px'

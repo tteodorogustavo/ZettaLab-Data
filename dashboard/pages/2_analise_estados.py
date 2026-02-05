@@ -8,9 +8,11 @@ import plotly.graph_objects as go
 import plotly.express as px
 from pathlib import Path
 import sys
+from streamlit_folium import st_folium
 
 sys.path.append(str(Path(__file__).parent.parent))
 from config import *
+from utils.mapa_helper import criar_mapa_estado_destaque
 
 st.set_page_config(page_title="Análise de Estados", page_icon="🗺️", layout="wide")
 
@@ -26,14 +28,45 @@ st.title("🗺️ Análise por Estado")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    estado = st.selectbox("Selecione um Estado:", sorted(df['UF'].unique()))
+    estado_uf = st.selectbox("Selecione um Estado:", sorted(df['UF'].unique()))
+    
+    # Encontrar nome do estado pelo UF
+    estado_nome = df[df['UF'] == estado_uf]['Estado'].iloc[0]
 
 with col2:
     anos_range = st.slider("Período:", min_value=2018, max_value=2022, 
                            value=(2018, 2022))
 
-# Filtrar dados
-df_estado = df[(df['UF'] == estado) & 
+# Mapa pequeno com destaque do estado
+st.markdown("---")
+st.markdown("### Localização Espacial")
+
+col1, col2 = st.columns([1, 2])
+
+with col1:
+    try:
+        mapa_pequeno = criar_mapa_estado_destaque(df, 2022, estado_nome)
+        st_folium(mapa_pequeno, width=350, height=350)
+    except Exception as e:
+        st.warning(f"Não foi possível exibir o mapa: {e}")
+
+with col2:
+    st.markdown(f"""
+    #### {estado_nome}
+    
+    Este mapa mostra a localização de **{estado_nome}** em relação ao restante do Brasil.
+    
+    **Navegue para a página "Mapa do Brasil"** para uma visualização interativa completa 
+    de todos os estados com zoom temporal.
+    
+    **Dicas:**
+    - 🖱️ Clique em estados para ver detalhes
+    - 📍 Use zoom para explorar regiões
+    - 🎚️ Use o slider de ano para ver evolução temporal
+    """)
+
+st.markdown("---")
+df_estado = df[(df['UF'] == estado_uf) & 
               (df['Ano'] >= anos_range[0]) & (df['Ano'] <= anos_range[1])].copy()
 
 if df_estado.empty:
@@ -69,7 +102,7 @@ else:
                  annotation_text="Meta PNE (1.0%)")
     fig.add_hline(y=THRESHOLD_ALTO, line_dash="dash", line_color="red",
                  annotation_text="Nível Crítico (3.0%)")
-    fig.update_layout(title=f"Evolução - {estado}", xaxis_title="Ano",
+    fig.update_layout(title=f"Evolução - {estado_nome}", xaxis_title="Ano",
                      yaxis_title="Taxa (%)", height=400)
     st.plotly_chart(fig, use_container_width=True)
     
@@ -108,7 +141,7 @@ else:
     media_brasil = df[df['Ano'] == df_estado.iloc[-1]['Ano']]['Taxa_Abandono_Media'].mean()
     
     fig = go.Figure(data=[
-        go.Bar(name=estado, x=[estado], y=[ultima_taxa], marker_color='#1f77b4'),
+        go.Bar(name=estado_nome, x=[estado_nome], y=[ultima_taxa], marker_color='#1f77b4'),
         go.Bar(name='Média Brasil', x=['Brasil'], y=[media_brasil], marker_color='#ff7f0e')
     ])
     fig.update_layout(title=f"Comparação 2022", barmode='group', height=400)
