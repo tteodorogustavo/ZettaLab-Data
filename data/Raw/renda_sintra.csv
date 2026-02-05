@@ -1,0 +1,59 @@
+﻿"Tabela 7531 - Rendimento médio mensal real domiciliar per capita, a preços médios do ano, por classes simples de percentual das pessoas em ordem crescente de rendimento domiciliar per capita"
+"Variável - Rendimento médio mensal real domiciliar per capita, a preços médios do ano (Reais)"
+"Nível";"Cód.";"Unidade da Federação";"Ano x Classes de percentual das pessoas em ordem crescente de rendimento domiciliar per capita"
+"Nível";"Cód.";"Unidade da Federação";"2018";"2019";"2020";"2021";"2022";"2024"
+"Nível";"Cód.";"Unidade da Federação";"Total";"Total";"Total";"Total";"Total";"Total"
+"UF";"11";"Rondônia";"1072";"1082";"1109";"1016";"1323";"1721"
+"UF";"12";"Acre";"868";"854";"888";"885";"1028";"1259"
+"UF";"13";"Amazonas";"761";"804";"828";"812";"947";"1231"
+"UF";"14";"Roraima";"1161";"1018";"950";"1030";"1246";"1513"
+"UF";"15";"Pará";"822";"769";"863";"830";"1063";"1326"
+"UF";"16";"Amapá";"818";"841";"856";"846";"1163";"1509"
+"UF";"17";"Tocantins";"997";"1004";"1019";"1058";"1358";"1725"
+"UF";"21";"Maranhão";"586";"614";"662";"641";"833";"1078"
+"UF";"22";"Piauí";"778";"802";"836";"851";"1092";"1349"
+"UF";"23";"Ceará";"818";"907";"980";"902";"1037";"1210"
+"UF";"24";"Rio Grande do Norte";"921";"998";"1045";"1114";"1235";"1575"
+"UF";"25";"Paraíba";"849";"877";"861";"875";"1086";"1363"
+"UF";"26";"Pernambuco";"829";"921";"882";"841";"991";"1412"
+"UF";"27";"Alagoas";"681";"704";"768";"759";"922";"1317"
+"UF";"28";"Sergipe";"870";"933";"994";"925";"1150";"1436"
+"UF";"29";"Bahia";"807";"883";"947";"848";"1000";"1342"
+"UF";"31";"Minas Gerais";"1241";"1293";"1290";"1312";"1505";"1956"
+"UF";"32";"Espírito Santo";"1250";"1398";"1323";"1285";"1663";"2068"
+"UF";"33";"Rio de Janeiro";"1599";"1753";"1664";"1690";"1928";"2422"
+"UF";"35";"São Paulo";"1777";"1839";"1787";"1823";"2073";"2588"
+"UF";"41";"Paraná";"1515";"1554";"1479";"1536";"1802";"2438"
+"UF";"42";"Santa Catarina";"1576";"1678";"1601";"1692";"1958";"2544"
+"UF";"43";"Rio Grande do Sul";"1609";"1757";"1714";"1774";"2033";"2532"
+"UF";"50";"Mato Grosso do Sul";"1373";"1443";"1424";"1440";"1796";"2105"
+"UF";"51";"Mato Grosso";"1325";"1326";"1345";"1326";"1623";"2235"
+"UF";"52";"Goiás";"1253";"1256";"1236";"1275";"1588";"2059"
+"UF";"53";"Distrito Federal";"2355";"2513";"2384";"2488";"2802";"3276"
+"Fonte: IBGE. Pesquisa Nacional por Amostra de Domicílios Contínua, acumulado de primeiras visitas, exceto 2020-2022, acumulado de quintas visitas, devido à pandemia de Covid-19."
+
+"Notas"
+"O rendimento de trabalho é captado somente para pessoas de 14 anos ou mais de idade.
+Exclusive as pessoas cuja condição no domicílio era ""Pensionista"", ""Empregado doméstico"" ou ""Parente de empregado doméstico"".
+O rendimento real é obtido conforme deflacionamento especificado nas Notas Técnicas da PNAD Contínua.
+Os limites superiores de cada classe são definidos pelos respectivos percentis da distribuição do rendimento domiciliar per capita dos moradores, representados por P5, P10, P20..., e podem ser consultados na tabela 7438.
+A proporção exata da população em cada classe pode ser vista na Tabela 7521.
+A partir de 19 de novembro de 2021, as estimativas deste tema passaram a ser divulgadas com base no novo método de ponderação da pesquisa, conforme a Nota Técnica 03/2021. Consequentemente, a série histórica dos indicadores foi atualizada.
+Até o 3º trimestre de 2015, as pessoas em licença remunerada na semana de referência da pesquisa e que estavam afastadas por período inferior a 4 meses eram classificadas como ""ocupadas"". Caso esse afastamento fosse igual ou superior a 4 meses, essas pessoas eram definidas como ""fora da força de trabalho"" e, portanto, não se investigava o rendimento do trabalho. A partir do 4º trimestre de 2015, em acordo com as recomendações da 19ª Conferência Internacional de Estatísticos do Trabalho - CIET, da OIT, pessoas em licença remunerada, independentemente do tempo de afastamento, passaram a ser classificadas como ""ocupadas"" e seus rendimentos do trabalho foram coletados normalmente."
+""
+"Legenda"
+"Símbolo";"Significado"
+"-";"Zero absoluto, não resultante de um cálculo ou arredondamento.
+Ex: Em determinado município não existem pessoas de 14 anos de idade sem instrução."
+"0";"Zero resultante de um cálculo ou arredondamento.
+Ex: A inflação do feijão em determinada Região Metropolitana foi 0.
+Determinado município produziu 400 kg de sementes de girassol e os dados da tabela são expressos em toneladas."
+"X";"Valor inibido para não identificar o informante.
+Ex: Determinado município só possui uma empresa produtora de cimento, logo o valor de sua produção deve ser inibido."
+"..";"Valor não se aplica.
+Ex: Não se pode obter o total da produção agrícola em determinado município quando os produtos agrícolas são contabilizados com unidades de medida distintas."
+"...";"Valor não disponível.
+Ex: A produção de feijão em determinado município não foi pesquisada ou determinado município não existia no ano da pesquisa."
+"A a Z
+(exceto X)";"Significa uma faixa de valores. Varia em função da tabela (se for o caso).
+Ex: O nível de precisão da produção estimada de combustíveis está na faixa A (95 a 100%)"

@@ -1,0 +1,52 @@
+﻿"Tabela 2609 - Nascidos vivos, por ano de nascimento, grupos de idade da mãe na ocasião do parto, sexo e lugar de residência da mãe"
+"Variável - Nascidos vivos registrados no ano (Pessoas)"
+"Nível";"Cód.";"Unidade da Federação";"Sexo";"Ano x Ano de nascimento x Idade da mãe na ocasião do parto"
+"Nível";"Cód.";"Unidade da Federação";"Sexo";"2018";"2019";"2020";"2021";"2022"
+"Nível";"Cód.";"Unidade da Federação";"Sexo";"Total";"Total";"Total";"Total";"Total"
+"Nível";"Cód.";"Unidade da Federação";"Sexo";"Total";"Total";"Total";"Total";"Total"
+"UF";"11";"Rondônia";"Total";"28333";"27246";"25733";"25556";"25032"
+"UF";"12";"Acre";"Total";"17266";"17116";"14981";"16125";"15210"
+"UF";"13";"Amazonas";"Total";"80890";"80997";"72368";"80208";"78974"
+"UF";"14";"Roraima";"Total";"12670";"14398";"12139";"12814";"13290"
+"UF";"15";"Pará";"Total";"145467";"142255";"129640";"138541";"135164"
+"UF";"16";"Amapá";"Total";"16847";"15949";"13135";"15896";"14959"
+"UF";"17";"Tocantins";"Total";"25992";"24856";"23928";"24386";"22978"
+"UF";"21";"Maranhão";"Total";"120027";"113824";"104578";"109641";"100866"
+"UF";"22";"Piauí";"Total";"49619";"47864";"43997";"46123";"43622"
+"UF";"23";"Ceará";"Total";"133899";"130149";"120184";"121851";"115239"
+"UF";"24";"Rio Grande do Norte";"Total";"48909";"46469";"43712";"43940";"40895"
+"UF";"25";"Paraíba";"Total";"59756";"57227";"55546";"55572";"50162"
+"UF";"26";"Pernambuco";"Total";"137692";"134294";"127512";"127569";"119946"
+"UF";"27";"Alagoas";"Total";"53235";"50393";"47750";"49143";"46130"
+"UF";"28";"Sergipe";"Total";"34333";"32790";"31145";"31242";"28846"
+"UF";"29";"Bahia";"Total";"207352";"200638";"189384";"187345";"176398"
+"UF";"31";"Minas Gerais";"Total";"265020";"257775";"248330";"243469";"236557"
+"UF";"32";"Espírito Santo";"Total";"57186";"54840";"53958";"52537";"52089"
+"UF";"33";"Rio de Janeiro";"Total";"218354";"206518";"198084";"190722";"182483"
+"UF";"35";"São Paulo";"Total";"609648";"585720";"553458";"527606";"516923"
+"UF";"41";"Paraná";"Total";"157481";"154554";"146981";"143055";"141742"
+"UF";"42";"Santa Catarina";"Total";"100542";"99506";"98845";"97362";"99225"
+"UF";"43";"Rio Grande do Sul";"Total";"140560";"135074";"130527";"124896";"121730"
+"UF";"50";"Mato Grosso do Sul";"Total";"45461";"44382";"42311";"42504";"40973"
+"UF";"51";"Mato Grosso";"Total";"59133";"59232";"55954";"57533";"58959"
+"UF";"52";"Goiás";"Total";"99200";"96768";"92680";"90707";"89690"
+"UF";"53";"Distrito Federal";"Total";"44284";"42481";"39322";"38116";"36042"
+"Fonte: IBGE - Pesquisa Estatísticas do Registro Civil"
+
+""
+"Legenda"
+"Símbolo";"Significado"
+"-";"Zero absoluto, não resultante de um cálculo ou arredondamento.
+Ex: Em determinado município não existem pessoas de 14 anos de idade sem instrução."
+"0";"Zero resultante de um cálculo ou arredondamento.
+Ex: A inflação do feijão em determinada Região Metropolitana foi 0.
+Determinado município produziu 400 kg de sementes de girassol e os dados da tabela são expressos em toneladas."
+"X";"Valor inibido para não identificar o informante.
+Ex: Determinado município só possui uma empresa produtora de cimento, logo o valor de sua produção deve ser inibido."
+"..";"Valor não se aplica.
+Ex: Não se pode obter o total da produção agrícola em determinado município quando os produtos agrícolas são contabilizados com unidades de medida distintas."
+"...";"Valor não disponível.
+Ex: A produção de feijão em determinado município não foi pesquisada ou determinado município não existia no ano da pesquisa."
+"A a Z
+(exceto X)";"Significa uma faixa de valores. Varia em função da tabela (se for o caso).
+Ex: O nível de precisão da produção estimada de combustíveis está na faixa A (95 a 100%)"
