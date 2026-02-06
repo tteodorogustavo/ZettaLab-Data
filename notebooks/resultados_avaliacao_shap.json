@@ -20,15 +20,15 @@
         "SHAP_Importance": 0.7324637174606323
       },
       {
-        "Feature": "Taxa_Gravidez_Adolescente",
+        "Feature": "Taxa_Gravidez_Adolescente_x",
         "SHAP_Importance": 0.2754771113395691
       },
       {
-        "Feature": "Indice_Gini",
+        "Feature": "Indice_Gini_x",
         "SHAP_Importance": 0.1897381693124771
       },
       {
-        "Feature": "PIB_Total_MilReais",
+        "Feature": "PIB_Total_MilReais_x",
         "SHAP_Importance": 0.15301275253295898
       },
       {
@@ -83,12 +83,12 @@
         "Importance_Std": 0.23760203710475591
       },
       {
-        "Feature": "PIB_Total_MilReais",
+        "Feature": "PIB_Total_MilReais_x",
         "Importance_Mean": 0.10149100872119651,
         "Importance_Std": 0.03519968859062537
       },
       {
-        "Feature": "Indice_Gini",
+        "Feature": "Indice_Gini_x",
         "Importance_Mean": 0.0707796811922023,
         "Importance_Std": 0.08027516822617056
       },
@@ -108,7 +108,7 @@
         "Importance_Std": 0.01694429994036943
       },
       {
-        "Feature": "Taxa_Gravidez_Adolescente",
+        "Feature": "Taxa_Gravidez_Adolescente_x",
         "Importance_Mean": -0.18902737189579813,
         "Importance_Std": 0.12491648294168675
       }

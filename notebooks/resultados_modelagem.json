@@ -7,8 +7,8 @@
     },
     "random_forest": {
       "MAE": 0.6751870640162307,
-      "RMSE": 0.9272711635975298,
-      "R2": 0.3873142076974505
+      "RMSE": 0.9272711635975297,
+      "R2": 0.3873142076974506
     },
     "xgboost": {
       "MAE": 0.6650357005772768,
@@ -24,7 +24,7 @@
       "R2": -2.9081150676320093
     },
     "random_forest": {
-      "MAE": 2.9154471255490457,
+      "MAE": 2.915447125549045,
       "RMSE": 3.8387472497253734,
       "R2": -1.2802085126974587
     },
@@ -36,7 +36,7 @@
   },
   "feature_importance_abandono": [
     {
-      "Feature": "Taxa_Gravidez_Adolescente",
+      "Feature": "Taxa_Gravidez_Adolescente_x",
       "Importancia": 0.6350442171096802
     },
     {
@@ -44,11 +44,11 @@
       "Importancia": 0.10487258434295654
     },
     {
-      "Feature": "PIB_Total_MilReais",
+      "Feature": "PIB_Total_MilReais_x",
       "Importancia": 0.08909933269023895
     },
     {
-      "Feature": "Indice_Gini",
+      "Feature": "Indice_Gini_x",
       "Importancia": 0.07464593648910522
     },
     {
