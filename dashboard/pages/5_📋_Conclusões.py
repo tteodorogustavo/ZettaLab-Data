@@ -219,15 +219,29 @@ section_header("Limitações Honestas", "⚠️")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.warning("""
-    #### ❌ O que NÃO sabemos
-    
-    - **51% de variância explicada** = 49% ainda desconhecido
-    - **Correlação ≠ Causalidade** (dados sugerem, não comprovam)
-    - **Nível estadual apenas** (municipal seria muito melhor)
-    - **Não prevê eventos extremos** (pandemias, guerras, etc)
-    - **Dados limitados** (5 anos é pouco para séries temporais)
-    """)
+     st.warning("""
+     #### ❌ O que NÃO sabemos
+     
+     - **51% de variância explicada** = 49% ainda desconhecido
+     - **Correlação ≠ Causalidade** (dados sugerem, não comprovam)
+     - **Nível estadual apenas** (municipal seria muito melhor)
+     - **Não prevê eventos extremos** (pandemias, guerras, etc)
+     - **Dados limitados** (5 anos é pouco para séries temporais)
+     
+     **Limitações Temporais:**
+     - Análise cobre apenas 2018-2022 (5 anos)
+     - Padrões observados podem ter mudado após 2022
+     - COVID-19 (2020-2021) pode ter distorcido alguns indicadores
+     - NÃO generalizar para períodos anteriores a 2018
+     
+     **Falácia Ecológica:**
+     - Dados agregados por estado (27 observações por ano)
+     - Variação importante existe DENTRO de estados
+     - Padrões estaduais podem NÃO se aplicar a:
+       - Municípios específicos
+       - Escolas individuais
+       - Estudantes em particular
+     """)
 
 with col2:
     st.success("""
