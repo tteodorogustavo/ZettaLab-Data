@@ -242,8 +242,8 @@ def render_sobre():
         - **Features**: {len(FEATURES)} variáveis socioeconômicas
         """)
     
-     with st.expander("📖 Navegação do Dashboard", expanded=False):
-         st.markdown("""
+    with st.expander("📖 Navegação do Dashboard", expanded=False):
+        st.markdown("""
           **Páginas Disponíveis:**
           
           1. **📊 Início** (página atual)
@@ -256,60 +256,60 @@ def render_sobre():
             - Indicadores socioeconômicos
             - Comparação estado vs Brasil
          
-         3. **🔮 Predições Futuras**
+        3. **🔮 Predições Futuras**
             - Previsões 2023-2025
             - Análise de cenários
             - Simulações "E se..."
          
-         4. **🔬 Análise SHAP**
+        4. **🔬 Análise SHAP**
             - Feature importance global
             - Análise por estado
             - Relações entre variáveis
          
-         5. **📋 Conclusões**
+        5. **📋 Conclusões**
             - Storytelling de dados
             - Descobertas principais
             - Limitações honestas
          
-         6. **🗺️ Mapa do Brasil**
+        6. **🗺️ Mapa do Brasil**
             - Visualização espacial
             - Série temporal interativa
             - Ranking de estados
-         """)
+        """)
      
-     with st.expander("🔧 Metodologia Técnica Detalhada", expanded=False):
-         st.markdown("""
-         Para aprofundamento técnico sobre qualidade de dados, pré-processamento e tunning de hiperparâmetros:
+    with st.expander("🔧 Metodologia Técnica Detalhada", expanded=False):
+        st.markdown("""
+        Para aprofundamento técnico sobre qualidade de dados, pré-processamento e tunning de hiperparâmetros:
          
-         **Notebooks Disponíveis** (em `/notebooks/`):
+        **Notebooks Disponíveis** (em `/notebooks/`):
          
-         - **02_Preparacao_Dados.ipynb**
+        - **02_Preparacao_Dados.ipynb**
            - Qualidade de dados: limpeza, validação, tratamento de valores faltantes
            - Integração de múltiplas fontes (INEP, IBGE, Atlas Brasil)
            - Transformações e normalizações aplicadas
          
-         - **04_modelagem_regressao.ipynb**
+        - **04_modelagem_regressao.ipynb**
            - Comparação de 3 modelos: Linear Regression, Random Forest, XGBoost
            - Justificativa para seleção de XGBoost
            - Estratégia de validação (train 2018-2021, test 2022)
          
-         - **08_otimizacao_hiperparametros.ipynb**
+        - **08_otimizacao_hiperparametros.ipynb**
            - GridSearch para otimização de parâmetros XGBoost
            - Análise de sensibilidade
            - Validação cruzada temporal
          
-         - **05_avaliacao_shap.ipynb**
+        - **05_avaliacao_shap.ipynb**
            - Análise SHAP detalhada
            - Interpretabilidade do modelo
            - Validação de features importantes
          
-         - **09_justificacao_thresholds_risco.ipynb**
+        - **09_justificacao_thresholds_risco.ipynb**
            - Justificação científica dos thresholds (1.0% e 3.0%)
            - Análise de recall e precisão
            - Validação da estratégia híbrida
          
-         Todos os notebooks são **reprodutíveis** com dados públicos.
-         """)
+        Todos os notebooks são **reprodutíveis** com dados públicos.
+        """)
 
 # Criar tabs
 tabs_dict = {

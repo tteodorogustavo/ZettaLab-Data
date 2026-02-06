@@ -92,44 +92,44 @@ def render_importancia_global():
     
     st.markdown("---")
     
-     # Interpretação
-     section_header("Interpretação dos Achados", "📖")
+    # Interpretação
+    section_header("Interpretação dos Achados", "📖")
      
-     st.markdown("""
-     ### 🔴 Achado Principal: Gravidez Adolescente (63.5%)
+    st.markdown("""
+    ### 🔴 Achado Principal: Gravidez Adolescente (63.5%)
      
-     A análise SHAP indica que **gravidez adolescente é o fator mais importante** 
-     para explicar variações em evasão escolar entre estados.
+    A análise SHAP indica que **gravidez adolescente é o fator mais importante** 
+    para explicar variações em evasão escolar entre estados.
      
-     **Contexto Técnico:**
-     - SHAP valores medem importância das features no modelo de predição
-     - Isto representa ASSOCIAÇÃO observada, não causalidade estabelecida
-     - Ambas (gravidez adolescente e evasão) podem resultar de vulnerabilidade social comum
+    **Contexto Técnico:**
+    - SHAP valores medem importância das features no modelo de predição
+    - Isto representa ASSOCIAÇÃO observada, não causalidade estabelecida
+    - Ambas (gravidez adolescente e evasão) podem resultar de vulnerabilidade social comum
      
-     **Possíveis Mecanismos** (requerem confirmação em pesquisa adicional):
-     - Impacto direto: Gravidez interrompe trajetória educacional
-     - Fator comum: Pobreza e oportunidades limitadas predispõem ambos os eventos
+    **Possíveis Mecanismos** (requerem confirmação em pesquisa adicional):
+    - Impacto direto: Gravidez interrompe trajetória educacional
+    - Fator comum: Pobreza e oportunidades limitadas predispõem ambos os eventos
      
-     ---
+    ---
      
-     ### 💰 Achado 2: Renda Per Capita (15.2%)
+    ### 💰 Achado 2: Renda Per Capita (15.2%)
      
-     Renda mais baixa apresenta forte associação com maior evasão.
+    Renda mais baixa apresenta forte associação com maior evasão.
      
-     **Possível Mecanismo**: Pobreza → necessidade de trabalhar → abandono escolar
+    **Possível Mecanismo**: Pobreza → necessidade de trabalhar → abandono escolar
      
-     **Nota Importante**: Correlação não implica causalidade direta.
+    **Nota Importante**: Correlação não implica causalidade direta.
      
-     ---
+    ---
      
-     ### 💼 Achado 3: Desemprego (12.1%)
+    ### 💼 Achado 3: Desemprego (12.1%)
      
-     Taxa de desemprego elevada mostra associação com maior evasão.
+    Taxa de desemprego elevada mostra associação com maior evasão.
      
-     **Possível Mecanismo**: Desemprego dos pais → insegurança financeira → menor investimento em educação
+    **Possível Mecanismo**: Desemprego dos pais → insegurança financeira → menor investimento em educação
      
-     **Nota Importante**: Pode haver relação indireta através de renda/estabilidade financeira.
-     """)
+    **Nota Importante**: Pode haver relação indireta através de renda/estabilidade financeira.
+    """)
 
 def render_perfil_estado():
     """Tab 2: Perfil por Estado"""

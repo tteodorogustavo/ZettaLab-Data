@@ -215,81 +215,81 @@ def render_cenarios():
     col1, col2 = st.columns(2)
     
     with col1:
-         st.info("""
-         **Cenário 1: Melhoria em Desenvolvimento Humano**
-         
-         Simula um aumento de 5% no Índice de Desenvolvimento Humano (IDHM).
-         
-         Possíveis mecanismos:
-         - Melhorias em educação de base
-         - Aumento de acesso a serviços de saúde
-         - Maior segurança e estabilidade social
-         """)
-         
-         if st.button("Simular Cenário 1 - IDHM +5%"):
-             pred_cenario1 = ultima_obs.copy()
-             pred_cenario1['IDHM'] = min(1.0, pred_cenario1['IDHM'] * 1.05)  # IDHM capped at 1.0
-             pred_cenario1['Ano'] = 2025
-             
-             features_c1 = pred_cenario1[FEATURES].values.reshape(1, -1)
-             taxa_c1 = model.predict(features_c1)[0]
-             taxa_original = df_pred.iloc[-1]['Taxa Abandono Predita']
-             reducao_pct = ((taxa_original - taxa_c1)/taxa_original)*100
-             
-             if taxa_original > taxa_c1:
-                 st.success(f"""
-                 **Simulação: Impacto da Melhoria de IDHM (5%)**
-                 
-                 - Taxa Atual (2025): **{taxa_original:.2f}%**
-                 - Taxa Simulada com IDHM +5%: **{taxa_c1:.2f}%**
-                 - **Redução em pontos percentuais**: {taxa_original - taxa_c1:.3f}
-                 - **Melhoria relativa**: {reducao_pct:.2f}%
-                 
-                 Nota: Este resultado é baseado em padrões observados nos dados.
-                 Mudanças reais dependem de múltiplos fatores e políticas implementadas.
-                 """)
-             else:
-                 st.warning(f"""
-                 Neste cenário, o IDHM não é o fator limitante para a redução de evasão. 
-                 A taxa é mais influenciada por outros fatores (desemprego, renda, taxa de gravidez adolescente).
-                 """)
+        st.info("""
+        **Cenário 1: Melhoria em Desenvolvimento Humano**
+        
+        Simula um aumento de 5% no Índice de Desenvolvimento Humano (IDHM).
+        
+        Possíveis mecanismos:
+        - Melhorias em educação de base
+        - Aumento de acesso a serviços de saúde
+        - Maior segurança e estabilidade social
+        """)
+        
+        if st.button("Simular Cenário 1 - IDHM +5%"):
+            pred_cenario1 = ultima_obs.copy()
+            pred_cenario1['IDHM'] = min(1.0, pred_cenario1['IDHM'] * 1.05)  # IDHM capped at 1.0
+            pred_cenario1['Ano'] = 2025
+            
+            features_c1 = pred_cenario1[FEATURES].values.reshape(1, -1)
+            taxa_c1 = model.predict(features_c1)[0]
+            taxa_original = df_pred.iloc[-1]['Taxa Abandono Predita']
+            reducao_pct = ((taxa_original - taxa_c1)/taxa_original)*100
+            
+            if taxa_original > taxa_c1:
+                st.success(f"""
+                **Simulação: Impacto da Melhoria de IDHM (5%)**
+                
+                - Taxa Atual (2025): **{taxa_original:.2f}%**
+                - Taxa Simulada com IDHM +5%: **{taxa_c1:.2f}%**
+                - **Redução em pontos percentuais**: {taxa_original - taxa_c1:.3f}
+                - **Melhoria relativa**: {reducao_pct:.2f}%
+                
+                Nota: Este resultado é baseado em padrões observados nos dados.
+                Mudanças reais dependem de múltiplos fatores e políticas implementadas.
+                """)
+            else:
+                st.warning(f"""
+                Neste cenário, o IDHM não é o fator limitante para a redução de evasão. 
+                A taxa é mais influenciada por outros fatores (desemprego, renda, taxa de gravidez adolescente).
+                """)
     
-     with col2:
-         st.info("""
-         **Cenário 2: Redução do Desemprego**
-         
-         Simula uma redução de 10% na taxa de desemprego.
-         
-         Possíveis mecanismos:
-         - Maior estabilidade financeira para famílias
-         - Menos necessidade de crianças trabalhar
-         - Maior capacidade de investir em educação
-         """)
-         
-         if st.button("Simular Cenário 2 - Desemprego -10%"):
-             pred_cenario2 = ultima_obs.copy()
-             pred_cenario2['Taxa_Desemprego'] = pred_cenario2['Taxa_Desemprego'] * 0.90
-             pred_cenario2['Ano'] = 2025
-             
-             features_c2 = pred_cenario2[FEATURES].values.reshape(1, -1)
-             taxa_c2 = model.predict(features_c2)[0]
-             taxa_original = df_pred.iloc[-1]['Taxa Abandono Predita']
-             reducao_pct = ((taxa_original - taxa_c2)/taxa_original)*100
-             
-             if taxa_original > taxa_c2:
-                 st.success(f"""
-                 **Simulação: Impacto da Redução de Desemprego (10%)**
-                 
-                 - Taxa Atual (2025): **{taxa_original:.2f}%**
-                 - Taxa Simulada com Desemprego -10%: **{taxa_c2:.2f}%**
-                 - **Redução em pontos percentuais**: {taxa_original - taxa_c2:.3f}
-                 - **Melhoria relativa**: {reducao_pct:.2f}%
-                 
-                 Nota: Este resultado é baseado em padrões observados nos dados.
-                 Mudanças reais dependem de múltiplos fatores e políticas implementadas.
-                 """)
-             else:
-                 st.warning(f"""
+    with col2:
+        st.info("""
+        **Cenário 2: Redução do Desemprego**
+        
+        Simula uma redução de 10% na taxa de desemprego.
+        
+        Possíveis mecanismos:
+        - Maior estabilidade financeira para famílias
+        - Menos necessidade de crianças trabalhar
+        - Maior capacidade de investir em educação
+        """)
+        
+        if st.button("Simular Cenário 2 - Desemprego -10%"):
+            pred_cenario2 = ultima_obs.copy()
+            pred_cenario2['Taxa_Desemprego'] = pred_cenario2['Taxa_Desemprego'] * 0.90
+            pred_cenario2['Ano'] = 2025
+            
+            features_c2 = pred_cenario2[FEATURES].values.reshape(1, -1)
+            taxa_c2 = model.predict(features_c2)[0]
+            taxa_original = df_pred.iloc[-1]['Taxa Abandono Predita']
+            reducao_pct = ((taxa_original - taxa_c2)/taxa_original)*100
+            
+            if taxa_original > taxa_c2:
+                st.success(f"""
+                **Simulação: Impacto da Redução de Desemprego (10%)**
+                
+                - Taxa Atual (2025): **{taxa_original:.2f}%**
+                - Taxa Simulada com Desemprego -10%: **{taxa_c2:.2f}%**
+                - **Redução em pontos percentuais**: {taxa_original - taxa_c2:.3f}
+                - **Melhoria relativa**: {reducao_pct:.2f}%
+                
+                Nota: Este resultado é baseado em padrões observados nos dados.
+                Mudanças reais dependem de múltiplos fatores e políticas implementadas.
+                """)
+            else:
+                st.warning(f"""
                  Neste cenário, o desemprego não é o fator limitante para a redução de evasão. 
                  A taxa é mais influenciada por outros fatores (renda, taxa de gravidez adolescente).
                  """)
@@ -298,19 +298,19 @@ def render_cenarios():
     
     col1, col2 = st.columns(2)
     
-     with col1:
-         st.info("""
-         **Cenário 3: Aumento de Renda Per Capita**
+    with col1:
+        st.info("""
+        **Cenário 3: Aumento de Renda Per Capita**
          
-         Simula um aumento de 15% na renda per capita.
+        Simula um aumento de 15% na renda per capita.
          
-         Possíveis mecanismos:
-         - Redução de pobreza extrema
-         - Maior poder de compra das famílias
-         - Capacidade das famílias manter filhos na escola
-         """)
+        Possíveis mecanismos:
+        - Redução de pobreza extrema
+        - Maior poder de compra das famílias
+        - Capacidade das famílias manter filhos na escola
+        """)
          
-         if st.button("Simular Cenário 3 - Renda +15%"):
+        if st.button("Simular Cenário 3 - Renda +15%"):
              pred_cenario3 = ultima_obs.copy()
              pred_cenario3['Renda_Per_Capita'] = pred_cenario3['Renda_Per_Capita'] * 1.15
              pred_cenario3['Ano'] = 2025
@@ -338,27 +338,27 @@ def render_cenarios():
                  A taxa é mais influenciada por outros fatores.
                  """)
     
-     with col2:
-         st.warning("""
-         **⚠️ Notas Técnicas sobre as Predições Base**
+    with col2:
+        st.warning("""
+        **⚠️ Notas Técnicas sobre as Predições Base**
          
-         As predições sem modificação de cenários aparecem como retas (constantes) porque:
+        As predições sem modificação de cenários aparecem como retas (constantes) porque:
          
-         1. **Assumção de estabilidade**: Indicadores socioeconômicos são mantidos 
+        1. **Assumção de estabilidade**: Indicadores socioeconômicos são mantidos 
             nos mesmos níveis de 2022
          
-         2. **Influência limitada do tempo**: Com apenas 5 anos de dados históricos (2018-2022), 
+        2. **Influência limitada do tempo**: Com apenas 5 anos de dados históricos (2018-2022), 
             o componente temporal isolado tem influência reduzida nas predições
          
-         3. **Fatores dominantes**: Variáveis como taxa de gravidez adolescente, renda e 
+        3. **Fatores dominantes**: Variáveis como taxa de gravidez adolescente, renda e 
             desemprego dominam o modelo muito mais que mudanças anuais
          
-         **Validez das predições**: 
-         - Confiável para 1-2 anos à frente
-         - Diminui para períodos mais distantes
+        **Validez das predições**: 
+        - Confiável para 1-2 anos à frente
+        - Diminui para períodos mais distantes
          
-         **Para explorar impactos reais**, use os cenários acima que modificam indicadores.
-         """)
+        **Para explorar impactos reais**, use os cenários acima que modificam indicadores.
+        """)
 
 # Criar tabs
 tab1, tab2, tab3 = st.tabs(["📋 Predições", "📊 Gráfico 3D", "🎯 Cenários"])

@@ -80,7 +80,7 @@ else:
             except Exception as e:
                 st.warning(f"Não foi possível exibir o mapa: {e}")
         
-         with col2:
+        with col2:
              st.markdown(f"""
              #### {estado_nome}
              
