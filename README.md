@@ -240,6 +240,38 @@ A análise segue rigorosamente as 7 fases CRISP-DM:
 | Taxa de Gravidez Adolescente | 2018-2022 | IBGE Tabela 2609 | % |
 | PIB Total | 2018-2022 | IBGE SIDRA Tabela 5938 | Mil R$ |
 
+### 3.4 Justificativa para Adição de Novos Dados
+
+**Por que os dados do Desafio I foram insuficientes?**
+
+O Desafio I utilizava apenas **Deslocamento** e **Saneamento Básico** como variáveis preditoras. Embora estes fatores sejam relevantes para qualidade de vida, eles apresentavam limitações críticas para explicar abandono escolar:
+
+#### Limitações Identificadas:
+
+1. **Deslocamento**: Embora importante para acessibilidade, não captura vulnerabilidades sociais profundas (pobreza, desigualdade)
+2. **Saneamento**: Essencial para bem-estar, mas correlação fraca com abandono escolar quando analisado isoladamente
+3. **Baixo R²**: Explicavam apenas ~15-20% da variabilidade em abandono escolar
+
+#### Necessidade de Expansão:
+
+A literatura socioeconômica indica que abandono escolar é fenômeno multifatorial que engloba:
+
+- **Vulnerabilidade Social**: Gravidez adolescente, desemprego familiar, pobreza
+- **Desigualdade**: Índice de Gini (distribuição de renda)
+- **Capacidade Econômica**: Renda per capita, PIB estadual
+- **Desenvolvimento Humano**: IDHM (integra educação, saúde, renda)
+
+#### Resultados da Expansão:
+
+| Métrica | Desafio I | Desafio II |
+|---------|----------|-----------|
+| Variáveis Preditoras | 2 | 6 |
+| Registros | 27 | 135 |
+| R² Modelo | 0.15 | 0.51 |
+| Interpretabilidade | Baixa | Alta (SHAP) |
+
+**Conclusão**: A incorporação de indicadores socioeconômicos multidimensionais aumentou significativamente a capacidade explicativa do modelo (R² = 51%), permitindo identificar que **gravidez adolescente é o principal fator** associado a abandono escolar.
+
 ## 4. Características do Dataset Final
 
 **Arquivo**: `data/Processed/dados_modelo_final.csv`
@@ -311,6 +343,23 @@ Variáveis Preditoras (X):
 - R² = 0.510 (explica 51% da variabilidade)
 - MAE = 0.598 (erro médio de 0.6 pontos percentuais)
 - Hiperparâmetros otimizados via GridSearch com validação cruzada 5-fold
+
+#### Visualizações dos Resultados da Modelagem
+
+**Comparação de Desempenho entre Modelos**
+![Resultados da Regressão](./data/vizualizations/modelagem_regressao_resultados.png)
+
+*Gráfico mostrando R², MAE e RMSE dos 4 modelos treinados (Linear Regression, Random Forest, XGBoost baseline e XGBoost otimizado).*
+
+**Análise de Resíduos do Melhor Modelo**
+![Resíduos do Modelo](./data/vizualizations/modelagem_residuos.png)
+
+*Distribuição dos resíduos do XGBoost otimizado mostrando normalidade aproximada e ausência de padrões sistemáticos.*
+
+**Feature Importance - Importância das Variáveis**
+![Feature Importance](./data/vizualizations/modelagem_feature_importance.png)
+
+*Gráfico SHAP mostrando a importância relativa de cada variável preditora no modelo final.*
 
 ### 6.2 Feature Importance (SHAP Analysis)
 
@@ -403,17 +452,6 @@ Baseada em thresholds do Plano Nacional de Educação (PNE):
 - Tooltips com informações por UF
 - Tabela de ranking por ano
 
-### 8.3 Como Usar o Dashboard
-
-```bash
-# Ativar virtualenv
-source venv/bin/activate
-
-# Executar dashboard
-streamlit run dashboard/app.py
-
-# Acessar em http://localhost:8501
-```
 
 ## 9. Estrutura do Repositório
 
