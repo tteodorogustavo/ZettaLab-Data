@@ -1,5 +1,5 @@
 """
-Página 4: SHAP Analysis - Interpretabilidade (Reestruturada com Tabs e 3D)
+Página 4: SHAP Analysis - Interpretabilidade
 """
 
 import streamlit as st
@@ -221,53 +221,8 @@ def render_dependencia():
     - Padrão visual mostra a relação entre variáveis
     """)
 
-def render_grafico_3d():
-    """Tab 4: Visualização 3D Multidimensional"""
-    section_header("Análise 3D Multidimensional", "📊")
-    
-    st.markdown("""
-    Visualize como três variáveis importantes se relacionam simultaneamente:
-    - **Eixo X**: Taxa de Gravidez Adolescente
-    - **Eixo Y**: Renda Per Capita
-    - **Eixo Z**: Taxa de Abandono
-    
-    O tamanho dos pontos representa Desemprego, e a cor representa IDHM.
-    """)
-    
-    # Criar scatter 3D
-    fig = go.Figure(data=[go.Scatter3d(
-        x=df['Taxa_Gravidez_Adolescente'],
-        y=df['Renda_Per_Capita'],
-        z=df['Taxa_Abandono_Media'],
-        mode='markers',
-        marker=dict(
-            size=5,
-            color=df['IDHM'],
-            colorscale='Viridis',
-            showscale=True,
-            colorbar=dict(title="IDHM")
-        ),
-        text=[f"UF: {uf}<br>Gravidez: {g:.2f}%<br>Renda: R$ {r:.0f}<br>Abandono: {a:.2f}%<br>Desemprego: {d:.2f}%" 
-              for uf, g, r, a, d in zip(df['UF'], df['Taxa_Gravidez_Adolescente'], 
-                                         df['Renda_Per_Capita'], df['Taxa_Abandono_Media'],
-                                         df['Taxa_Desemprego'])],
-        hoverinfo='text'
-    )])
-    
-    fig.update_layout(
-        title='Relação Multidimensional (SHAP)',
-        scene=dict(
-            xaxis_title='Gravidez Adolescente (%)',
-            yaxis_title='Renda Per Capita (R$)',
-            zaxis_title='Taxa de Abandono (%)'
-        ),
-        height=500
-    )
-    
-    st.plotly_chart(fig, use_container_width=True)
-
 # Criar tabs
-tab1, tab2, tab3, tab4 = st.tabs(["🎯 Importância Global", "👤 Perfil Estado", "📊 Dependência", "📈 3D Multidimensional"])
+tab1, tab2, tab3 = st.tabs(["🎯 Importância Global", "👤 Perfil Estado", "📊 Dependência"])
 
 with tab1:
     render_importancia_global()
@@ -277,9 +232,6 @@ with tab2:
 
 with tab3:
     render_dependencia()
-
-with tab4:
-    render_grafico_3d()
 
 st.markdown("---")
 

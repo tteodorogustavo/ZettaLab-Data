@@ -1,5 +1,5 @@
 """
-Página 3: Predições Futuras (Reestruturada com Tabs, 3D e Dark Mode)
+Página 3: Predições Futuras
 """
 
 import streamlit as st
@@ -189,19 +189,19 @@ def render_cenarios():
     
     with col2:
         st.info("""
-        **Cenário 2: Redução do Desemprego**
+        **Cenário 2: Redução da Desigualdade Social**
         
-        Simula uma redução de 10% na taxa de desemprego.
+        Simula uma redução de 10% no Índice de Gini (maior igualdade).
         
         Possíveis mecanismos:
-        - Maior estabilidade financeira para famílias
-        - Menos necessidade de crianças trabalhar
-        - Maior capacidade de investir em educação
+        - Redistribuição de renda mais equitativa
+        - Políticas de inclusão social
+        - Redução de disparidades econômicas entre famílias
         """)
         
-        if st.button("Simular Cenário 2 - Desemprego -10%"):
+        if st.button("Simular Cenário 2 - Gini -10%"):
             pred_cenario2 = ultima_obs.copy()
-            pred_cenario2['Taxa_Desemprego'] = pred_cenario2['Taxa_Desemprego'] * 0.90
+            pred_cenario2['Indice_Gini'] = pred_cenario2['Indice_Gini'] * 0.90
             pred_cenario2['Ano'] = 2023
             
             features_c2 = pred_cenario2[FEATURES].values.reshape(1, -1)
@@ -211,10 +211,10 @@ def render_cenarios():
             
             if taxa_original > taxa_c2:
                 st.success(f"""
-                **Simulação: Impacto da Redução de Desemprego (10%)**
+                **Simulação: Impacto da Redução da Desigualdade (Gini -10%)**
                 
                 - Taxa Atual (2023): **{taxa_original:.2f}%**
-                - Taxa Simulada com Desemprego -10%: **{taxa_c2:.2f}%**
+                - Taxa Simulada com Gini -10%: **{taxa_c2:.2f}%**
                 - **Redução em pontos percentuais**: {taxa_original - taxa_c2:.3f}
                 - **Melhoria relativa**: {reducao_pct:.2f}%
                 
@@ -223,7 +223,7 @@ def render_cenarios():
                 """)
             else:
                 st.warning(f"""
-                Neste cenário, o desemprego não é o fator limitante para a redução de evasão. 
+                Neste cenário, a desigualdade social não é o fator limitante para a redução de evasão. 
                 A taxa é mais influenciada por outros fatores (renda, taxa de gravidez adolescente).
                 """)
     
@@ -233,19 +233,20 @@ def render_cenarios():
     
     with col1:
         st.info("""
-        **Cenário 3: Aumento de Renda Per Capita**
+        **Cenário 3: Redução da Gravidez Adolescente**
          
-        Simula um aumento de 15% na renda per capita.
+        Simula uma redução de 15% na taxa de gravidez adolescente.
          
         Possíveis mecanismos:
-        - Redução de pobreza extrema
-        - Maior poder de compra das famílias
-        - Capacidade das famílias manter filhos na escola
+        - Melhor educação sexual nas escolas
+        - Maior acesso a métodos contraceptivos
+        - Políticas de empoderamento feminino
+        - Aumento da consciência sobre impactos na educação
         """)
          
-        if st.button("Simular Cenário 3 - Renda +15%"):
+        if st.button("Simular Cenário 3 - Gravidez Adolescente -15%"):
              pred_cenario3 = ultima_obs.copy()
-             pred_cenario3['Renda_Per_Capita'] = pred_cenario3['Renda_Per_Capita'] * 1.15
+             pred_cenario3['Taxa_Gravidez_Adolescente'] = pred_cenario3['Taxa_Gravidez_Adolescente'] * 0.85
              pred_cenario3['Ano'] = 2023
              
              features_c3 = pred_cenario3[FEATURES].values.reshape(1, -1)
@@ -255,19 +256,20 @@ def render_cenarios():
              
              if taxa_original > taxa_c3:
                  st.success(f"""
-                 **Simulação: Impacto do Aumento de Renda (15%)**
+                 **Simulação: Impacto da Redução de Gravidez Adolescente (15%)**
                  
                  - Taxa Atual (2023): **{taxa_original:.2f}%**
-                 - Taxa Simulada com Renda +15%: **{taxa_c3:.2f}%**
+                 - Taxa Simulada com Gravidez -15%: **{taxa_c3:.2f}%**
                  - **Redução em pontos percentuais**: {taxa_original - taxa_c3:.3f}
                  - **Melhoria relativa**: {reducao_pct:.2f}%
                  
                  Nota: Este resultado é baseado em padrões observados nos dados.
+                 A taxa de gravidez adolescente é o fator com maior importância no modelo (63.5%).
                  Mudanças reais dependem de múltiplos fatores e políticas implementadas.
                  """)
              else:
                  st.warning(f"""
-                 Neste cenário, a renda não é o fator limitante para a redução de evasão. 
+                 Neste cenário, a gravidez adolescente não é o fator limitante para a redução de evasão. 
                  A taxa é mais influenciada por outros fatores.
                  """)
 
