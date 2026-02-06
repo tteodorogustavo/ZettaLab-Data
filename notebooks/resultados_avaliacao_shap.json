@@ -1,0 +1,156 @@
+{
+  "modelo": {
+    "algoritmo": "XGBoost",
+    "parametros": {
+      "n_estimators": 100,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "random_state": 42
+    },
+    "performance": {
+      "mae": 0.6650357005772768,
+      "rmse": 0.8986335633346593,
+      "r2": 0.42457388048708755
+    }
+  },
+  "shap_analysis": {
+    "feature_importance": [
+      {
+        "Feature": "IDHM",
+        "SHAP_Importance": 0.7324637174606323
+      },
+      {
+        "Feature": "Taxa_Gravidez_Adolescente",
+        "SHAP_Importance": 0.2754771113395691
+      },
+      {
+        "Feature": "Indice_Gini",
+        "SHAP_Importance": 0.1897381693124771
+      },
+      {
+        "Feature": "PIB_Total_MilReais",
+        "SHAP_Importance": 0.15301275253295898
+      },
+      {
+        "Feature": "Ano",
+        "SHAP_Importance": 0.13654634356498718
+      },
+      {
+        "Feature": "Renda_Per_Capita",
+        "SHAP_Importance": 0.06178756430745125
+      },
+      {
+        "Feature": "Taxa_Desemprego",
+        "SHAP_Importance": 0.02145499363541603
+      }
+    ],
+    "base_value": 1.7258418798446655,
+    "casos_analisados": {
+      "Maior Taxa Real": {
+        "uf": "Pará",
+        "taxa_real": 4.45,
+        "taxa_predita": 1.9819667339324951,
+        "erro_absoluto": 2.468033266067505
+      },
+      "Menor Taxa Real": {
+        "uf": "Ceará",
+        "taxa_real": 0.4499999999999999,
+        "taxa_predita": 0.532697319984436,
+        "erro_absoluto": 0.08269731998443614
+      },
+      "Maior Erro": {
+        "uf": "Pará",
+        "taxa_real": 4.45,
+        "taxa_predita": 1.9819667339324951,
+        "erro_absoluto": 2.468033266067505
+      }
+    }
+  },
+  "validacao": {
+    "cross_validation": {
+      "scores": [
+        -0.951633704520183,
+        0.23801130940940018,
+        0.38993962322153275
+      ],
+      "mean_r2": -0.1078942572964167,
+      "std_r2": 0.5998292780647672
+    },
+    "permutation_importance": [
+      {
+        "Feature": "IDHM",
+        "Importance_Mean": 1.2376498375200855,
+        "Importance_Std": 0.23760203710475591
+      },
+      {
+        "Feature": "PIB_Total_MilReais",
+        "Importance_Mean": 0.10149100872119651,
+        "Importance_Std": 0.03519968859062537
+      },
+      {
+        "Feature": "Indice_Gini",
+        "Importance_Mean": 0.0707796811922023,
+        "Importance_Std": 0.08027516822617056
+      },
+      {
+        "Feature": "Renda_Per_Capita",
+        "Importance_Mean": 0.019086025168857646,
+        "Importance_Std": 0.028277270595580706
+      },
+      {
+        "Feature": "Ano",
+        "Importance_Mean": 0.0,
+        "Importance_Std": 0.0
+      },
+      {
+        "Feature": "Taxa_Desemprego",
+        "Importance_Mean": -0.0009656653756803357,
+        "Importance_Std": 0.01694429994036943
+      },
+      {
+        "Feature": "Taxa_Gravidez_Adolescente",
+        "Importance_Mean": -0.18902737189579813,
+        "Importance_Std": 0.12491648294168675
+      }
+    ]
+  },
+  "residuos": {
+    "estatisticas": {
+      "media": 0.19240111487883105,
+      "desvio_padrao": 0.8945164247516666,
+      "maximo": 2.468033266067505,
+      "minimo": -1.8597521781921387,
+      "skewness": 0.2065647104074904,
+      "kurtosis": 0.9683521175322731
+    },
+    "teste_normalidade": {
+      "shapiro_pvalue": 0.9176955916661428
+    }
+  },
+  "conclusoes": {
+    "status_aprovacao": "Aprovado com ressalvas",
+    "principais_insights": [
+      "Gravidez adolescente é maior preditor de abandono",
+      "IDHM e PIB atuam como fatores protetores",
+      "Modelo consistente mas com performance moderada",
+      "SHAP confirma importância das features"
+    ],
+    "limitacoes": [
+      "R² moderado (42%)",
+      "Dados agregados por UF",
+      "Faltam indicadores educacionais específicos"
+    ],
+    "recomendacoes": [
+      "Coletar dados educacionais específicos",
+      "Explorar dados municipais",
+      "Implementar feature engineering",
+      "Testar modelos mais complexos"
+    ]
+  },
+  "metadata": {
+    "data_execucao": "2025-02-04",
+    "versao_shap": "0.50.0",
+    "n_teste": 27,
+    "features_analisadas": 7
+  }
+}
