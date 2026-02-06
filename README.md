@@ -109,23 +109,113 @@ O Desafio II expandiu a análise do Desafio I, resolvendo suas limitações atra
 
 **Pergunta de Pesquisa**: "Como poderíamos avaliar e prever os agentes/fenômenos que mais causam impactos socioeconômicos no Brasil?"
 
-## 2. Metodologia CRISP-DM
+### 1.1 Quick Start - Como Executar o Projeto
+
+#### Pré-requisitos
+- Python 3.8+
+- Git
+- pip (gerenciador de pacotes Python)
+
+#### Passo 1: Clonar o Repositório
+
+```bash
+# Clone o repositório
+git clone https://github.com/tteodorogustavo/ZettaLab-Data.git
+cd ZettaLab-Data
+```
+
+#### Passo 2: Configurar Ambiente Virtual
+
+```bash
+# Criar virtualenv (recomendado)
+python -m venv venv
+
+# Ativar virtualenv
+# No Windows:
+venv\Scripts\activate
+# No macOS/Linux:
+source venv/bin/activate
+```
+
+#### Passo 3: Instalar Dependências
+
+```bash
+# Atualizar pip
+pip install --upgrade pip
+
+# Instalar todas as dependências
+pip install -r requirements.txt
+```
+
+#### Passo 4: Executar o Dashboard
+
+```bash
+# Executar Streamlit
+streamlit run dashboard/app.py
+
+# Acessar em: http://localhost:8501
+```
+
+O dashboard abrirá automaticamente no navegador padrão. Se não abrir, acesse manualmente em `http://localhost:8501`.
+
+#### Passo 5 (Opcional): Executar Notebooks
+
+Se quiser explorar a análise detalhada:
+
+```bash
+# Iniciar Jupyter Lab
+jupyter lab
+
+# Ou Jupyter Notebook
+jupyter notebook
+
+# Depois, abra notebooks/ e selecione os arquivos .ipynb desejados
+# Ordem recomendada: 01_EDA → 02_Preparacao_Dados → 04_modelagem_regressao → 05_avaliacao_shap
+```
+
+#### Troubleshooting
+
+**Erro: "streamlit command not found"**
+```bash
+# Certifique-se de que o virtualenv está ativo
+# Re-instale as dependências:
+pip install -r requirements.txt
+```
+
+**Erro: "ModuleNotFoundError"**
+```bash
+# Instale pacotes faltantes manualmente:
+pip install streamlit plotly folium streamlit-folium geopandas
+```
+
+**Erro de Dados Faltantes**
+```bash
+# Verifique se os arquivos estão em data/Raw/
+# Baixe manualmente de:
+# - INEP: https://www.gov.br/inep/
+# - IBGE SIDRA: https://sidra.ibge.gov.br/
+# - Atlas Brasil: https://atlasbrasil.org.br/
+```
+
+---
+
+## 2. Metodologia CRISP-DM (Etapas)
 
 A análise segue rigorosamente as 7 fases CRISP-DM:
 
 ```
-1. Entendimento do Negócio     ✓ Completa
-2. Entendimento dos Dados      ✓ Completa
-3. Preparação dos Dados        ✓ Completa
-4. Modelagem                   ✓ Completa
-5. Avaliação                   ✓ Completa
-6. Implantação                 ✓ Completa
-7. Monitoramento/Dashboard     ✓ Completa
+1. Entendimento do Negócio     
+2. Entendimento dos Dados      
+3. Preparação dos Dados        
+4. Modelagem                   
+5. Avaliação                   
+6. Implantação                 
+7. Monitoramento/Dashboard     
 ```
 
 ## 3. Aquisição de Dados - Desafio II
 
-### 3.1 Dados Educacionais
+### 3.1 Dados Educacionais (INEP)
 
 | Variável | Período | Fonte | Registros |
 |----------|---------|-------|-----------|
@@ -256,15 +346,15 @@ Baseada em thresholds do Plano Nacional de Educação (PNE):
 
 | Estado | Taxa | Classe |
 |--------|------|--------|
-| Maranhão | 4.12% | Alto Risco |
-| Pará | 3.85% | Alto Risco |
-| Alagoas | 3.42% | Alto Risco |
-| Acre | 3.38% | Alto Risco |
-| Amazonas | 3.25% | Alto Risco |
-| Rondônia | 3.12% | Alto Risco |
-| Piauí | 3.08% | Alto Risco |
+| Pará | 4.45% | Alto Risco |
+| Bahia | 4.00% | Alto Risco |
+| Roraima | 3.90% | Alto Risco |
+| Acre | 3.80% | Alto Risco |
+| Paraíba | 3.40% | Alto Risco |
+| Amazonas | 3.35% | Alto Risco |
+| Rio Grande do Norte | 2.80% | Médio Risco |
 
-**Performance da Classificação**: 64% de recall em identificar estados de alto risco (melhoria de 0% para 64% em relação aos modelos de quartis puros).
+**Performance da Classificação**: 6 estados em Alto Risco (>3.0%) e 1 em Médio Risco, totalizando 7 estados de atenção prioritária em 2022.
 
 ## 8. Dashboard Streamlit
 
@@ -413,26 +503,6 @@ jupyter==1.0.0
 jupyterlab==3.6.0
 ```
 
-### 10.2 Instalação
-
-```bash
-# Clonar repositório
-git clone <url-repositorio>
-cd ZettaLab-Data
-
-# Criar e ativar virtualenv (Python 3.9+)
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate  # Windows
-
-# Instalar dependências
-pip install -r requirements.txt
-
-# Verificar instalação
-python -c "import pandas, xgboost, streamlit; print('OK')"
-```
-
 ## 11. Principais Descobertas
 
 ### 11.1 Fatores Socioeconômicos Críticos
@@ -556,18 +626,21 @@ Para dúvidas, sugestões ou colaborações:
 
 ---
 
-## Histórico de Atualizações
-
-| Data | Versão | Alterações |
-|------|--------|-----------|
-| 05/02/2026 | 1.0 | README integrado com separação clara entre Desafios I e II |
-| 05/02/2026 | 0.9 | Dashboard Streamlit 6 páginas operacional |
-| 05/02/2026 | 0.8 | Notebooks CRISP-DM consolidados (Notebooks 02-09) |
-| 05/02/2026 | 0.7 | Modelo XGBoost otimizado (R²=0.51, MAE=0.598) |
-
 ---
 
-**Última atualização**: 05 de Fevereiro de 2026  
-**Status**: Projeto Concluído - Pronto para Apresentação  
-**Dataset**: `data/Processed/dados_modelo_final.csv` (135 registros, 14 colunas)  
-**Dashboard**: Execute com `streamlit run dashboard/app.py` na pasta raiz
+## APÊNDICE: Revisão de Qualidade e Documentação
+
+Este projeto passou por uma revisão completa de qualidade em 2026, incluindo:
+
+- Auditoria de linguagem técnica em dashboard (6 páginas)
+- Revisão dos 5 notebooks principais (CRISP-DM)
+- Correção de erros matemáticos e lógicos
+- Padronização de paths com pathlib
+- Adição de documentação científica
+
+**Arquivos de Referência**:
+- `RELATORIO_REVISAO_QUALITY_DESAFIO_2.md` - Revisão do dashboard
+- `RELATORIO_REVISAO_NOTEBOOKS_DESAFIO_2.md` - Revisão dos notebooks
+- `MUDANCAS_DETALHADAS.md` - Detalhes técnicos das correções
+
+---
