@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 2 - Requirements Checklist</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        h1, h2 { color: #333; }
+        table { width: 100%; border-collapse: collapse; background: white; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        th { background: #003366; color: white; padding: 12px; text-align: left; font-weight: bold; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f0f0f0; }
+        .status-full { background: #d4edda; color: #155724; font-weight: bold; }
+        .status-partial { background: #fff3cd; color: #856404; font-weight: bold; }
+        .status-missing { background: #f8d7da; color: #721c24; font-weight: bold; }
+        .summary { background: white; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .metric { display: inline-block; margin-right: 30px; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #003366; }
+        .metric-label { font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>📊 Desafio 2 - E-book Requirements Checklist</h1>
+    <p><strong>Generated:</strong> February 5, 2026 | <strong>Project:</strong> Ciência e Governança de Dados</p>
+    
+    <div class="summary">
+        <h2>📈 Quick Metrics</h2>
+        <div class="metric">
+            <div class="metric-value" style="color: #28a745;">10</div>
+            <div class="metric-label">✅ Fully Covered (38.5%)</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value" style="color: #ffc107;">13</div>
+            <div class="metric-label">⚠️ Partially Covered (50.0%)</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value" style="color: #dc3545;">3</div>
+            <div class="metric-label">❌ Missing (11.5%)</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value" style="color: #003366;">69.2%</div>
+            <div class="metric-label">Overall Coverage</div>
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th width="8%">ID</th>
+                <th width="10%">Chapter</th>
+                <th width="35%">Requirement</th>
+                <th width="15%">CRISP-DM Phase</th>
+                <th width="20%">Dashboard Page</th>
+                <th width="12%">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>CH1.1</strong></td>
+                <td>Capítulo 1</td>
+                <td>Overview of Data Science and its relevance to socioeconomic problems</td>
+                <td>Business Understanding</td>
+                <td>Página 1 (Início) / Página 5 (Conclusões)</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH1.2</strong></td>
+                <td>Capítulo 1</td>
+                <td>Role of Predictive Modeling in socioeconomic problems</td>
+                <td>Business Understanding</td>
+                <td>Página 5 (Conclusões)</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH1.3</strong></td>
+                <td>Capítulo 1</td>
+                <td>CRISP-DM methodology overview (6 phases)</td>
+                <td>All phases</td>
+                <td>Página 5 (Conclusões) / README</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH2.1</strong></td>
+                <td>Capítulo 2</td>
+                <td>Data quality importance and validation</td>
+                <td>Data Understanding & Preparation</td>
+                <td>Missing - Data Quality Report needed</td>
+                <td class="status-missing">❌ Missing</td>
+            </tr>
+            <tr>
+                <td><strong>CH2.2</strong></td>
+                <td>Capítulo 2</td>
+                <td>Strategies to identify and acquire new data</td>
+                <td>Data Understanding</td>
+                <td>README / Documentation</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH2.3</strong></td>
+                <td>Capítulo 2</td>
+                <td>Justification for acquiring new variables or temporal data</td>
+                <td>Data Understanding</td>
+                <td>Página 1 (Início) - Tendência Temporal</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH2.4</strong></td>
+                <td>Capítulo 2</td>
+                <td>Data cleaning and preprocessing techniques</td>
+                <td>Data Preparation</td>
+                <td>Missing - Data Preprocessing Report needed</td>
+                <td class="status-missing">❌ Missing</td>
+            </tr>
+            <tr>
+                <td><strong>CH2.5</strong></td>
+                <td>Capítulo 2</td>
+                <td>Tools and libraries documentation (Pandas, NumPy)</td>
+                <td>Data Preparation</td>
+                <td>README / GitHub Repository</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH3.1</strong></td>
+                <td>Capítulo 3</td>
+                <td>Introduction to ML models and pattern recognition</td>
+                <td>Modeling</td>
+                <td>Página 3 (Predições Futuras)</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH3.2</strong></td>
+                <td>Capítulo 3</td>
+                <td>Types of models: Regression, Classification, Time Series</td>
+                <td>Modeling</td>
+                <td>Página 3 (Predições) / Página 5 (Conclusões)</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH3.3</strong></td>
+                <td>Capítulo 3</td>
+                <td>Selecting appropriate models for socioeconomic impacts</td>
+                <td>Modeling</td>
+                <td>Página 5 (Conclusões)</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH3.4</strong></td>
+                <td>Capítulo 3</td>
+                <td>Model validation: train/test split, cross-validation, metrics</td>
+                <td>Evaluation</td>
+                <td>Página 3 (Predições) / Página 4 (SHAP)</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH3.5</strong></td>
+                <td>Capítulo 3</td>
+                <td>Hyperparameter tuning: Grid Search, Random Search</td>
+                <td>Modeling</td>
+                <td>Missing - Hyperparameter Tuning Report needed</td>
+                <td class="status-missing">❌ Missing</td>
+            </tr>
+            <tr>
+                <td><strong>CH4.1</strong></td>
+                <td>Capítulo 4</td>
+                <td>Why analyze variable importance</td>
+                <td>Evaluation</td>
+                <td>Página 4 (SHAP Analysis) / Página 5 (Conclusões)</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH4.2</strong></td>
+                <td>Capítulo 4</td>
+                <td>Importance methods: Permutation Importance, SHAP, Feature Importance</td>
+                <td>Evaluation</td>
+                <td>Página 4 (SHAP Analysis)</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH4.3</strong></td>
+                <td>Capítulo 4</td>
+                <td>Interpretation of results and policy impacts</td>
+                <td>Evaluation & Implementation</td>
+                <td>Página 4 (SHAP) / Página 5 (Conclusões)</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH4.4</strong></td>
+                <td>Capítulo 4</td>
+                <td>Tools for analysis: Scikit-learn, SHAP, Eli5</td>
+                <td>Evaluation</td>
+                <td>Página 4 (SHAP Analysis) / README</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH5.1</strong></td>
+                <td>Capítulo 5</td>
+                <td>Principles of effective data visualization</td>
+                <td>Implementation</td>
+                <td>All Pages</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH5.2</strong></td>
+                <td>Capítulo 5</td>
+                <td>Types of visualizations: Charts, Maps, Tables</td>
+                <td>Implementation</td>
+                <td>All Pages (Charts/Maps) + Página 6 (Maps)</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH5.3</strong></td>
+                <td>Capítulo 5</td>
+                <td>Dashboard tools: Plotly, Tableau, Power BI, Streamlit</td>
+                <td>Implementation</td>
+                <td>All Pages</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH5.4</strong></td>
+                <td>Capítulo 5</td>
+                <td>Best practices for interactive dashboards</td>
+                <td>Implementation</td>
+                <td>All Pages</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH6.1</strong></td>
+                <td>Capítulo 6</td>
+                <td>Environment setup: Python, Jupyter, Anaconda, Virtual Environments</td>
+                <td>Preparation</td>
+                <td>README / Repository</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH7.1</strong></td>
+                <td>Capítulo 7</td>
+                <td>Step-by-step ML model implementation with Scikit-learn</td>
+                <td>Modeling & Evaluation</td>
+                <td>Página 3 (Predições) / Página 4 (SHAP)</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH8.1</strong></td>
+                <td>Capítulo 8</td>
+                <td>SHAP tutorial: Interpreting models, Feature Importance presentation</td>
+                <td>Evaluation</td>
+                <td>Página 4 (SHAP Analysis)</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH9.1</strong></td>
+                <td>Capítulo 9</td>
+                <td>Creating visualizations with Matplotlib, Seaborn, Folium, Plotly</td>
+                <td>Implementation</td>
+                <td>All Pages</td>
+                <td class="status-fully-covered">✅ Fully Covered</td>
+            </tr>
+            <tr>
+                <td><strong>CH10.1</strong></td>
+                <td>Capítulo 10</td>
+                <td>Documentation: Jupyter notebooks, Final PDF report, Checklist, Presentation</td>
+                <td>Implementation</td>
+                <td>README / GitHub Repository</td>
+                <td class="status-partially-covered">⚠️ Partially Covered</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="summary">
+        <h2>📝 Notes</h2>
+        <ul>
+            <li>✅ <strong>Fully Covered:</strong> Requirements comprehensively addressed in the dashboard</li>
+            <li>⚠️ <strong>Partially Covered:</strong> Requirements addressed but need enhancement or completion</li>
+            <li>❌ <strong>Missing:</strong> Requirements not currently implemented in the dashboard</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

@@ -7,6 +7,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from config import *
+from theme import apply_dark_theme, section_header, stat_card, info_box, warning_box
 
 # ============================================================================
 # CONFIGURAÇÃO DO STREAMLIT
@@ -19,33 +20,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Tema e estilos customizados
-st.markdown("""
-    <style>
-        /* Sidebar */
-        [data-testid="stSidebar"] {
-            background-color: #f0f2f6;
-        }
-        
-        /* Títulos */
-        h1 {
-            color: #1f77b4;
-            border-bottom: 3px solid #1f77b4;
-            padding-bottom: 10px;
-        }
-        
-        h2 {
-            color: #2ca02c;
-        }
-        
-        /* Métricas */
-        [data-testid="metric"] {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 10px;
-        }
-    </style>
-""", unsafe_allow_html=True)
+# Aplicar tema Dark Mode Moderno
+apply_dark_theme()
 
 # ============================================================================
 # CARREGAMENTO DE DADOS
@@ -91,6 +67,8 @@ def main():
     st.markdown("---")
     
     # ===== KPIs NO TOPO =====
+    st.markdown("")  # Espaçamento
+    
     col1, col2, col3, col4 = st.columns(4)
     
     taxa_media = df['Taxa_Abandono_Media'].mean()
@@ -99,37 +77,21 @@ def main():
     r2_modelo = 0.510
     
     with col1:
-        st.metric(
-            "📈 Taxa Média Abandono",
-            f"{taxa_media:.2f}%",
-            f"{taxa_media - 2.0:.2f}% vs meta PNE"
-        )
+        stat_card("Taxa Média Abandono", f"{taxa_media:.2f}%", "📈", "warning")
     
     with col2:
-        st.metric(
-            "🚨 Estados Críticos (>3%)",
-            f"{n_criticos}",
-            "2022"
-        )
+        stat_card("Estados Críticos (>3%)", f"{n_criticos}", "🚨", "danger")
     
     with col3:
-        st.metric(
-            "🗺️ Total de Estados",
-            f"{n_estados}",
-            "Período: 2018-2022"
-        )
+        stat_card("Total de Estados", f"{n_estados}", "🗺️", "info")
     
     with col4:
-        st.metric(
-            "🤖 Modelo R² Score",
-            f"{r2_modelo:.3f}",
-            "+8.5% após otimização"
-        )
+        stat_card("Modelo R² Score", f"{r2_modelo:.3f}", "🤖", "success")
     
     st.markdown("---")
     
     # ===== DISTRIBUIÇÃO DE RISCO (2022) =====
-    st.subheader("📊 Distribuição de Risco (2022)")
+    section_header("Distribuição de Risco (2022)", "📊")
     
     df_2022 = df[df['Ano'] == 2022].copy()
     df_2022['Classe_Risco'] = pd.cut(
@@ -165,7 +127,7 @@ def main():
     st.markdown("---")
     
     # ===== TOP 5 ESTADOS CRÍTICOS =====
-    st.subheader("🔴 Top 5 Estados com Maior Risco (2022)")
+    section_header("Top 5 Estados com Maior Risco (2022)", "🔴")
     
     top5 = df_2022.nlargest(5, 'Taxa_Abandono_Media')[['UF', 'Taxa_Abandono_Media']].copy()
     top5.columns = ['Estado', 'Taxa Abandono (%)']
@@ -197,7 +159,7 @@ def main():
     st.markdown("---")
     
     # ===== TENDÊNCIA TEMPORAL =====
-    st.subheader("📉 Tendência Temporal (2018-2022)")
+    section_header("Tendência Temporal (2018-2022)", "📉")
     
     tendencia = df.groupby('Ano')['Taxa_Abandono_Media'].agg(['mean', 'min', 'max']).reset_index()
     
@@ -240,7 +202,7 @@ def main():
     st.markdown("---")
     
     # ===== INFORMAÇÕES ADICIONAIS =====
-    st.subheader("ℹ️ Sobre este Dashboard")
+    section_header("Sobre este Dashboard", "ℹ️")
     
     with st.expander("📖 Metodologia"):
         st.markdown("""
@@ -276,9 +238,9 @@ def main():
         st.markdown(f"""
         **Thresholds de Classificação:**
         
-        - **Baixo Risco**: Taxa ≤ {THRESHOLD_BAIXO*100:.1f}% (Meta do PNE)
-        - **Médio Risco**: {THRESHOLD_BAIXO*100:.1f}% < Taxa ≤ {THRESHOLD_ALTO*100:.1f}%
-        - **Alto Risco**: Taxa > {THRESHOLD_ALTO*100:.1f}% (3× a meta = Crise)
+        - **Baixo Risco**: Taxa ≤ {THRESHOLD_BAIXO:.1f}% (Meta do PNE)
+        - **Médio Risco**: {THRESHOLD_BAIXO:.1f}% < Taxa ≤ {THRESHOLD_ALTO:.1f}%
+        - **Alto Risco**: Taxa > {THRESHOLD_ALTO:.1f}% (3× a meta = Crise)
         
         Os thresholds foram definidos com base em:
         1. Análise estatística de percentis

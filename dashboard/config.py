@@ -1,15 +1,19 @@
-# ⚙️ Configurações do Dashboard
+# Configurações do Dashboard
 
 import os
+from pathlib import Path
+
+# Diretório raiz do projeto (um nível acima de dashboard)
+PROJECT_ROOT = Path(__file__).parent.parent
 
 # Diretórios
-DATA_DIR = '../data/Processed'
-MODELS_DIR = '../models'
-REPORTS_DIR = '../reports'
+DATA_DIR = PROJECT_ROOT / 'data' / 'Processed'
+MODELS_DIR = PROJECT_ROOT / 'models'
+REPORTS_DIR = PROJECT_ROOT / 'reports'
 
 # Arquivo de dados
-DATA_FILE = os.path.join(DATA_DIR, 'dados_modelo_final.csv')
-MODEL_FILE = os.path.join(MODELS_DIR, 'xgboost_otimizado.pkl')
+DATA_FILE = str(DATA_DIR / 'dados_modelo_final.csv')
+MODEL_FILE = str(MODELS_DIR / 'xgboost_otimizado.pkl')
 
 # Constantes
 RANDOM_STATE = 42
@@ -17,8 +21,8 @@ ANOS_DISPONIVEIS = [2018, 2019, 2020, 2021, 2022]
 ANOS_PREDICAO = [2023, 2024, 2025]
 
 # Thresholds de Risco
-THRESHOLD_BAIXO = 0.01     # 1.0% - Meta PNE
-THRESHOLD_ALTO = 0.03      # 3.0% - 3x meta (crise)
+THRESHOLD_BAIXO = 1.0       # 1.0% - Meta PNE
+THRESHOLD_ALTO = 3.0        # 3.0% - 3x meta (crise)
 
 # Cores por classe de risco
 CORES_RISCO = {
@@ -56,7 +60,7 @@ FEATURE_NAMES = {
 }
 
 # Configurações de Mapa
-GEOJSON_PATH = '../data/geojson/brasil_estados.geojson'
+GEOJSON_PATH = str(PROJECT_ROOT / 'data' / 'geojson' / 'brasil_estados.geojson')
 MAPA_BRASIL_CENTER = [-10.3910, -51.9253]  # Centro do Brasil
 MAPA_ZOOM_INICIAL = 4
 MAPA_ALTURA_GRANDE = '600px'

@@ -28,14 +28,14 @@ def obter_geojson():
     return geojson
 
 
-def mapear_cor_risco(valor, threshold_baixo=0.01, threshold_alto=0.03):
+def mapear_cor_risco(valor, threshold_baixo=1.0, threshold_alto=3.0):
     """
     Mapeia valor de taxa de abandono para cor de risco
     
     Args:
-        valor: Taxa de abandono (em decimal, ex: 0.018 = 1.8%)
-        threshold_baixo: Limite entre Baixo e Médio (padrão 1%)
-        threshold_alto: Limite entre Médio e Alto (padrão 3%)
+        valor: Taxa de abandono (em percentagem, ex: 1.8 = 1.8%)
+        threshold_baixo: Limite entre Baixo e Médio (padrão 1.0%)
+        threshold_alto: Limite entre Médio e Alto (padrão 3.0%)
     
     Returns:
         tuple: (cor_hex, classe_risco)
@@ -89,7 +89,7 @@ def criar_mapa_brasil(df, ano, altura='500px', largura='100%'):
     Cria mapa interativo do Brasil com dados de abandono escolar
     
     Args:
-        df: DataFrame com colunas ['Estado', 'Taxa_Abandono_Media', 'Ano']
+        df: DataFrame com colunas ['UF', 'Taxa_Abandono_Media', 'Ano']
         ano: Ano a ser visualizado
         altura: Altura do mapa em pixels
         largura: Largura do mapa
@@ -118,11 +118,10 @@ def criar_mapa_brasil(df, ano, altura='500px', largura='100%'):
     # Criar dicionário para lookup rápido
     df_dict = {}
     for _, row in df_ano.iterrows():
-        estado_norm = normalizar_nome_estado(row['Estado'])
+        estado_norm = normalizar_nome_estado(row['UF'])
         df_dict[estado_norm] = {
             'taxa': row['Taxa_Abandono_Media'],
-            'estado': row['Estado'],
-            'uf': row.get('UF', '')
+            'uf': row['UF']
         }
     
     # Adicionar features do GeoJSON
@@ -146,7 +145,7 @@ def criar_mapa_brasil(df, ano, altura='500px', largura='100%'):
         if taxa is not None:
             popup_text = f"""
             <b>{nome_estado}</b><br>
-            Taxa de Abandono: {taxa*100:.2f}%<br>
+            Taxa de Abandono: {taxa:.2f}%<br>
             Classificação: {classe}<br>
             Ano: {ano}
             """
@@ -163,7 +162,7 @@ def criar_mapa_brasil(df, ano, altura='500px', largura='100%'):
                 'fillOpacity': 0.7
             },
             popup=folium.Popup(popup_text, max_width=250),
-            tooltip=folium.Tooltip(f"{nome_estado}<br>Taxa: {taxa*100:.2f}%" if taxa else nome_estado)
+            tooltip=folium.Tooltip(f"{nome_estado}<br>Taxa: {taxa:.2f}%" if taxa else nome_estado)
         ).add_to(mapa)
     
     # Adicionar legenda
@@ -213,10 +212,10 @@ def criar_mapa_estado_destaque(df, ano, estado_selecionado, altura='300px', larg
     # Criar dicionário para lookup
     df_dict = {}
     for _, row in df_ano.iterrows():
-        estado_norm = normalizar_nome_estado(row['Estado'])
+        estado_norm = normalizar_nome_estado(row['UF'])
         df_dict[estado_norm] = {
             'taxa': row['Taxa_Abandono_Media'],
-            'estado': row['Estado']
+            'uf': row['UF']
         }
     
     # Carregar GeoJSON
@@ -247,7 +246,7 @@ def criar_mapa_estado_destaque(df, ano, estado_selecionado, altura='300px', larg
         
         popup_text = f"<b>{nome_estado}</b>"
         if taxa is not None:
-            popup_text += f"<br>Taxa: {taxa*100:.2f}%"
+            popup_text += f"<br>Taxa: {taxa:.2f}%"
         
         folium.GeoJson(
             feature,
