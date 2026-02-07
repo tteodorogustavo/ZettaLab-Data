@@ -156,11 +156,11 @@ def render_perfil_estado():
         with col2:
             # Radar chart dos indicadores
             fig = go.Figure(data=go.Scatterpolar(
-                r=[obs['Taxa_Gravidez_Adolescente'], 
+                r=[obs['Taxa_Gravidez_Adolescente_x'], 
                    obs['Renda_Per_Capita']/1000, 
                    obs['Taxa_Desemprego'], 
                    obs['IDHM']*100, 
-                   obs['Indice_Gini']*100],
+                   obs['Indice_Gini_x']*100],
                 theta=['Gravidez Adol.', 'Renda (R$ mil)', 'Desemprego', 'IDHM', 'Gini'],
                 fill='toself',
                 name=estado,
@@ -181,20 +181,21 @@ def render_dependencia():
     
     variavel_selecionada = st.selectbox(
         "Escolha uma variável para análise:",
-        ['Taxa_Gravidez_Adolescente', 'Renda_Per_Capita', 'Taxa_Desemprego', 'IDHM'],
+        ['Taxa_Gravidez_Adolescente_x', 'Renda_Per_Capita', 'Taxa_Desemprego', 'IDHM'],
+        format_func=lambda x: x.replace('_x', '').replace('_', ' '),
         key='shap_var'
     )
     
     # Gráfico de dispersão
-    if variavel_selecionada == 'Taxa_Gravidez_Adolescente':
-        fig = px.scatter(df, x='Taxa_Gravidez_Adolescente', y='Taxa_Abandono_Media',
+    if variavel_selecionada == 'Taxa_Gravidez_Adolescente_x':
+        fig = px.scatter(df, x='Taxa_Gravidez_Adolescente_x', y='Taxa_Abandono_Media',
                         color='Taxa_Abandono_Media', size='Renda_Per_Capita',
                         hover_name='UF', title='Relação: Gravidez Adolescente → Evasão',
                         color_continuous_scale='RdYlGn_r', size_max=30)
     
     elif variavel_selecionada == 'Renda_Per_Capita':
         fig = px.scatter(df, x='Renda_Per_Capita', y='Taxa_Abandono_Media',
-                        color='Taxa_Abandono_Media', size='Taxa_Gravidez_Adolescente',
+                        color='Taxa_Abandono_Media', size='Taxa_Gravidez_Adolescente_x',
                         hover_name='UF', title='Relação: Renda Per Capita → Evasão',
                         color_continuous_scale='RdYlGn_r', size_max=30)
     
@@ -206,7 +207,7 @@ def render_dependencia():
     
     else:  # IDHM
         fig = px.scatter(df, x='IDHM', y='Taxa_Abandono_Media',
-                        color='Taxa_Abandono_Media', size='Taxa_Gravidez_Adolescente',
+                        color='Taxa_Abandono_Media', size='Taxa_Gravidez_Adolescente_x',
                         hover_name='UF', title='Relação: IDHM → Evasão',
                         color_continuous_scale='RdYlGn_r', size_max=30)
     

@@ -201,7 +201,7 @@ def render_cenarios():
         
         if st.button("Simular Cenário 2 - Gini -10%"):
             pred_cenario2 = ultima_obs.copy()
-            pred_cenario2['Indice_Gini'] = pred_cenario2['Indice_Gini'] * 0.90
+            pred_cenario2['Indice_Gini_x'] = pred_cenario2['Indice_Gini_x'] * 0.90
             pred_cenario2['Ano'] = 2023
             
             features_c2 = pred_cenario2[FEATURES].values.reshape(1, -1)
@@ -246,7 +246,7 @@ def render_cenarios():
          
         if st.button("Simular Cenário 3 - Gravidez Adolescente -15%"):
              pred_cenario3 = ultima_obs.copy()
-             pred_cenario3['Taxa_Gravidez_Adolescente'] = pred_cenario3['Taxa_Gravidez_Adolescente'] * 0.85
+             pred_cenario3['Taxa_Gravidez_Adolescente_x'] = pred_cenario3['Taxa_Gravidez_Adolescente_x'] * 0.85
              pred_cenario3['Ano'] = 2023
              
              features_c3 = pred_cenario3[FEATURES].values.reshape(1, -1)

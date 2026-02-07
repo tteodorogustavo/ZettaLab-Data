@@ -44,7 +44,7 @@ de Machine Learning (XGBoost) para previsão e interpretação.
 
 # Features para o modelo
 FEATURES = ['Ano', 'IDHM', 'Taxa_Desemprego', 'Renda_Per_Capita', 
-            'Indice_Gini', 'Taxa_Gravidez_Adolescente', 'PIB_Total_MilReais']
+            'Indice_Gini_x', 'Taxa_Gravidez_Adolescente_x', 'PIB_Total_MilReais_x']
 
 # Nomes legíveis das features
 FEATURE_NAMES = {
@@ -52,9 +52,9 @@ FEATURE_NAMES = {
     'IDHM': 'Índice de Desenvolvimento Humano',
     'Taxa_Desemprego': 'Taxa de Desemprego (%)',
     'Renda_Per_Capita': 'Renda Per Capita (R$)',
-    'Indice_Gini': 'Índice de Gini',
-    'Taxa_Gravidez_Adolescente': 'Taxa de Gravidez Adolescente (%)',
-    'PIB_Total_MilReais': 'PIB (Milhões R$)',
+    'Indice_Gini_x': 'Índice de Gini',
+    'Taxa_Gravidez_Adolescente_x': 'Taxa de Gravidez Adolescente (%)',
+    'PIB_Total_MilReais_x': 'PIB (Milhões R$)',
     'Taxa_Abandono_Media': 'Taxa de Abandono Escolar (%)',
     'Taxa_Reprovacao_Media': 'Taxa de Reprovação (%)'
 }

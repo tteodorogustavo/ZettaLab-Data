@@ -143,7 +143,7 @@ else:
             **IDHM**: {ultima_obs['IDHM']:.3f}
             (0=baixíssimo, 1=muito alto)
             
-            **PIB Total**: R$ {ultima_obs['PIB_Total_MilReais']:,.0f}M
+            **PIB Total**: R$ {ultima_obs['PIB_Total_MilReais_x']:,.0f}M
             
             **Renda Per Capita**: R$ {ultima_obs['Renda_Per_Capita']:,.0f}
             """)
@@ -153,9 +153,9 @@ else:
             st.info(f"""
             **Taxa de Desemprego**: {ultima_obs['Taxa_Desemprego']:.2f}%
             
-            **Taxa de Gravidez Adolescente**: {ultima_obs['Taxa_Gravidez_Adolescente']:.2f}%
+            **Taxa de Gravidez Adolescente**: {ultima_obs['Taxa_Gravidez_Adolescente_x']:.2f}%
             
-            **Índice de Gini**: {ultima_obs['Indice_Gini']:.3f}
+            **Índice de Gini**: {ultima_obs['Indice_Gini_x']:.3f}
             (0=igualdade, 1=desigualdade máxima)
             """)
         
@@ -163,11 +163,11 @@ else:
         
         # Radar chart
         fig = go.Figure(data=go.Scatterpolar(
-            r=[ultima_obs['Taxa_Gravidez_Adolescente'], 
+            r=[ultima_obs['Taxa_Gravidez_Adolescente_x'], 
                ultima_obs['Renda_Per_Capita']/1000, 
                ultima_obs['Taxa_Desemprego'], 
                ultima_obs['IDHM']*100, 
-               ultima_obs['Indice_Gini']*100],
+               ultima_obs['Indice_Gini_x']*100],
             theta=['Gravidez Adol.', 'Renda (R$ mil)', 'Desemprego', 'IDHM', 'Gini'],
             fill='toself',
             name=estado_nome,
